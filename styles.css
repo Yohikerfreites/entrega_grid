@@ -1,0 +1,173 @@
+:root {
+  --primary-color: rgb(236, 236, 236);
+  --secondary-color: rgb(21, 21, 21);
+  --green-color: #4b5320;
+  --orange-color: #ff693d;
+  --border: 2px solid var(--green-color);
+  --spacing: 28px;
+  --font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilos generales */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  border-radius: 10px;
+
+}
+
+/* Resto del CSS */
+
+body {
+  background-color: gray;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  min-height: 100vh;
+
+}
+
+header {
+  display: grid;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  background-color: var(--green-color);
+
+
+}
+
+header>h1 {
+  align-self: start;
+  justify-self: center;
+
+}
+
+header>p {
+  text-align: justify;
+
+}
+
+
+
+.school {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background-image: url(https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2131650/ss_c970157813f8cc0ec6c3676895148159f27fe12c.1920x1080.jpg?t=1718795799);
+}
+
+.student {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  background-image: url(https://i.ytimg.com/vi/ouN12kctXyI/maxresdefault.jpg);
+}
+
+main {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  place-self: center center;
+  border: var(--border);
+  padding: 120px;
+  text-align: center;
+  font-size: large;
+}
+
+.time {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  background-image: url(https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2019/03/mgs3.jpg?tf=3840x);
+}
+
+.alumni {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  background-image: url(https://i.ytimg.com/vi/tm7lhCY2fck/maxresdefault.jpg);
+}
+
+footer {
+  grid-column: span 2;
+  grid-row: 3;
+  display: grid;
+  align-content: space-between;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+footer>h3 {
+  padding-top: 15px;
+
+}
+
+
+
+
+
+button {
+  width: 20%;
+  height: 50px;
+  background-color: rgb(122, 122, 121);
+  color: var(--secondary-color);
+  font-size: large;
+  cursor: pointer;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+
+}
+
+.alumni,
+.school,
+.student,
+.time {
+  background-size: cover;
+
+}
+
+@media screen and (max-width: 630px) {
+  body {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(8, 1fr);
+  }
+
+  header {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .school {
+    grid-column: 1;
+    grid-row: 3 / 4;
+  }
+
+  .student {
+    grid-column: 1;
+    grid-row: 4 / 5;
+
+  }
+
+  main {
+    grid-column: 1;
+    grid-row: 5 / 6;
+  }
+
+  .time {
+    grid-column: 1;
+    grid-row: 6 / 7;
+  }
+
+  .alumni {
+    grid-column: 1;
+    grid-row: 7 / 8;
+  }
+
+  footer {
+    grid-column: 1;
+    grid-row: 8 / 9;
+  }
+
+}
